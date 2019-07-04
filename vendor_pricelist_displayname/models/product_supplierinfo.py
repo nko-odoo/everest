@@ -15,4 +15,4 @@ class ProductSupplierInfo(models.Model):
     @api.one
     @api.depends('product_code')
     def _compute_display_name(self):
-        self.display_name = product_code
+        self.display_name = self.product_code
