@@ -15,6 +15,8 @@ class ProductAlternative(models.Model):
     standard_price = fields.Float(related='product_alt_id.standard_price', string="Cost")
     manufacturer = fields.Many2one(related='product_alt_id.manufacturer', string="Manufacturer")
     manufacturer_pref = fields.Char(related='product_alt_id.manufacturer_pref',string='Manuf. SKU')
+    qty_available = fields.Float(related='product_alt_id.qty_available', string="On Hand")
+    virtual_available = fields.Float(related='product_alt_id.virtual_available', string="Forecasted")
 
     @api.multi
     def unlink(self):
